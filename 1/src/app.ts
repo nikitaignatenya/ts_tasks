@@ -135,20 +135,20 @@
 // Входные: num1 = 15, num2 = 25 → Результат: "НОД: 5"
 // Входные: num1 = 14, num2 = 28 → Результат: "НОД: 14"
 
-let num1: number = +prompt();
-let num2: number = +prompt();
+// let num1: number = +prompt();
+// let num2: number = +prompt();
 
-let low: number = num1 < num2 ? num1 : num2;
-let count: number;
-for (let index = 0; index <= low; index++) {
-  if (num2 % index == 0 && num1 % index == 0) {
-    count = index;
-  } else {
-    null;
-  }
-}
+// let low: number = num1 < num2 ? num1 : num2;
+// let count: number;
+// for (let index = 0; index <= low; index++) {
+//   if (num2 % index == 0 && num1 % index == 0) {
+//     count = index;
+//   } else {
+//     null;
+//   }
+// }
 
-console.log(count);
+// console.log(count);
 
 
 // 3. Напишите программу, которая проверяет, начинается ли строка str с гласной буквы. Гласными
@@ -156,5 +156,3 @@ console.log(count);
 // Входные: str = "apple" → Результат: "Строка начинается с гласной"
 // Входные: str = "banana" → Результат: "Строка не начинается с гласной"
 
-
-let str: string = prompt();
