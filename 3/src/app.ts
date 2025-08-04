@@ -111,3 +111,28 @@ const str: Array<string> = ["hello", "level", "world"];
 // );
 
 // console.log(res);
+
+// Найти сумму квадратов только положительных чисел
+// Необходимо 5 решений: for, for of, while, do while, forEach
+// const nums = [-3, 2, -1, 4];
+// Ожидается: 2² + 4² = 4 + 16 = 20
+// const nums: Array<number> = [-3, 2, -1, 4];
+// let sum: number = 0;
+// for (let i = 0; i < nums.length; i++) {
+//   nums[i] > 0 ? (sum += nums[i] ** 2) : nums;
+// }
+// for (let el of nums) {
+//   el > 0 ? (sum += el ** 2) : sum;
+// }
+// let i: number = 0;
+// while (i < nums.length) {
+//   nums[i] > 0 ? (sum += nums[i] ** 2) : nums;
+//   i++;
+// }
+// do {
+//   nums[i] > 0 ? (sum += nums[i] ** 2) : nums;
+//   i++;
+// } while (i < nums.length);
+
+// nums.forEach((el) => (el > 0 ? (sum += el ** 2) : nums));
+// console.log(sum);
