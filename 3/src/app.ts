@@ -136,3 +136,124 @@ const str: Array<string> = ["hello", "level", "world"];
 
 // nums.forEach((el) => (el > 0 ? (sum += el ** 2) : nums));
 // console.log(sum);
+
+// interface obj {
+//   id: number;
+//   name: string;
+//   isActive: boolean;
+// }
+// const users: Array<obj> = [
+//   { id: 1, name: "Alice", isActive: true },
+//   { id: 2, name: "Bob", isActive: false },
+//   { id: 3, name: "Charlie", isActive: true },
+//   { id: 4, name: "Diana", isActive: false },
+// ];
+
+// 1. Отфильтруй массив users, чтобы получить только активных пользователей.
+// const res: Array<obj> = users.filter((el) => el.isActive == true);
+// console.log(res);
+
+// 2. Преобразуй массив users в массив строк из имён пользователей.
+// const res: Array<string> = users.map((el) => el.name);
+// console.log(res);
+
+// 3. Проверь, есть ли хотя бы один неактивный пользователь. Если есть - true, иначе - false
+// const res: boolean = users.some((el) => (el.isActive == true ? false : true));
+// console.log(res);
+
+// interface obj {
+//   id: number;
+//   name: string;
+//   score: number;
+// }
+// const students: Array<obj> = [
+//   { id: 1, name: "Anna", score: 75 },
+//   { id: 2, name: "John", score: 92 },
+//   { id: 3, name: "Tom", score: 88 },
+// ];
+
+// 4. Из массива students отфильтруй только тех, у кого балл выше 80.
+// const res: Array<obj> = students.filter((el) => el.score > 80);
+// console.log(res);
+
+// 5. Отобрази список имён всех курсов, которые проходят пользователи.
+//  Курсы находятся внутри каждого пользователя в массиве courses.
+// Результат: ['TS', 'React', 'Node', 'TS', 'HTML']
+// interface obj {
+//   id: number;
+//   name: string;
+//   courses: Array<string>;
+// }
+// const users: Array<obj> = [
+//   { id: 1, name: "Alice", courses: ["TS", "React"] },
+//   { id: 2, name: "Bob", courses: ["Node", "TS"] },
+//   { id: 3, name: "Clara", courses: ["HTML"] },
+// ];
+
+// const arr: Array<string> = [];
+// users.forEach((el) => arr.push(...el.courses));
+// console.log(arr);
+
+// 6. Из массива projects получи список названий только тех проектов,
+// в которых участвует пользователь с userId === 3.
+
+// interface obj {
+//   id: number;
+//   name: string;
+//   members: Array<number>;
+// }
+// const projects = [
+//   { id: 1, name: "CRM", members: [1, 2, 3] },
+//   { id: 2, name: "Landing Page", members: [2] },
+//   { id: 3, name: "Mobile App", members: [3, 4] },
+// ];
+
+// const res: Array<obj> = projects.filter((el) => {
+//   const some = el.members.some((ell) => (ell === 3 ? true : false));
+//   if (some === true) {
+//     return el;
+//   }
+// });
+
+// console.log(res);
+
+// 7. В массиве events найди все записи, которые происходят в 2023 году.
+// Результат:  ["Conference", "Workshop"]
+
+// interface obj {
+//   id: number;
+//   name: string;
+//   date: string;
+// }
+// const events: Array<obj> = [
+//   { id: 1, name: "Conference", date: "2023-05-01" },
+//   { id: 2, name: "Workshop", date: "2023-11-15" },
+//   { id: 3, name: "Webinar", date: "2025-01-20" },
+// ];
+
+// let arr: Array<string> = [];
+// events.forEach((el) => {
+//   if (el.date.includes("2023")) {
+//     arr.push(el.name);
+//   }
+// });
+// console.log(arr);
+
+// 8. Для массива teams получи имена всех участников всех команд, но без повторений.
+interface obj {
+  id: number;
+  members: Array<string>;
+}
+const teams: Array<obj> = [
+  { id: 1, members: ["Alice", "Bob"] },
+  { id: 2, members: ["Bob", "Clara"] },
+  { id: 3, members: ["Dave", "Alice"] },
+];
+
+let arr: Array<string> = [];
+teams.forEach((el) => {
+  arr.push(...el.members);
+});
+
+const res = [...new Set(arr)];
+console.log(res);

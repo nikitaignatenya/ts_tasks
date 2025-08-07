@@ -154,26 +154,309 @@
 // 14. Напишите программу, которая находит и выводит наиболее часто встречающийся
 // символ в заданной строке.
 
-let str: string = "aaa111bbbbcc";
-const obj: any = {};
+// let str: string = "aaa111bbbbcc";
+// const obj: any = {};
 
-for (let index = 0; index < str.length; index++) {
-  if (!obj[str[index]]) {
-    obj[str[index]] = 1;
-  } else {
-    obj[str[index]] += 1;
-  }
+// for (let index = 0; index < str.length; index++) {
+//   if (!obj[str[index]]) {
+//     obj[str[index]] = 1;
+//   } else {
+//     obj[str[index]] += 1;
+//   }
+// }
+// console.log(obj);
+
+// let count: number = 0;
+// let value: string = "";
+// for (let key in obj) {
+//   if (obj[key] > count) {
+//     count = obj[key];
+//     value = key;
+//   }
+// }
+
+// console.log(value);
+// console.log(count);
+
+// 15. На входе динамичный массив строк. Используя forEach создайте новый массив из
+// элементов, каждое значение которого имеет вид !name
+// [“hschool”, “company”] -> [“!hschool”, “!company”]
+
+// const strArr: Array<string> = [`hschool`, `company`];
+// const newArr: Array<string> = [];
+// strArr.forEach((el) => {
+//   newArr.push(`!${el}`);
+// });
+
+// console.log(newArr);
+
+// 16. Создайте массив чисел и определите, является ли он строго возрастающей
+// последовательностью.
+
+// const numsArr: Array<number> = [1, 2, 3, 4, 5];
+// let res: boolean;
+// for (let i = 1; i < numsArr.length; i++) {
+//   numsArr[i] > numsArr[i - 1] ? (res = true) : (res = false);
+// }
+
+// console.log(res);
+
+// 17. Создайте массив чисел и найдите наибольшую разницу между двумя элементами.
+
+// const numArr: Array<number> = [1, 4, 3, 7];
+// let count: number = -Infinity;
+// for (let i = 0; i < numArr.length; i++) {
+//   for (let l = 0; l < numArr.length; l++) {
+//     numArr[i] - numArr[l] > count ? (count = numArr[i] - numArr[l]) : count;
+//   }
+// }
+
+// console.log(count);
+
+// 18. Создайте массив объектов, представляющих книги, и найдите книгу где автор
+// Булгаков (author – одно из полей объекта)
+
+// interface obj {
+//   title: string;
+//   author: string;
+//   year: number;
+// }
+// const books: obj[] = [
+//   {
+//     title: "Война и мир",
+//     author: "Толстой",
+//     year: 1869,
+//   },
+//   {
+//     title: "Преступление и наказание",
+//     author: "Достоевский",
+//     year: 1866,
+//   },
+//   {
+//     title: "Мастер и Маргарита",
+//     author: "Булгаков",
+//     year: 1967,
+//   },
+//   {
+//     title: "Собачье сердце",
+//     author: "Булгаков",
+//     year: 1925,
+//   },
+//   {
+//     title: "Мёртвые души",
+//     author: "Гоголь",
+//     year: 1842,
+//   },
+// ];
+
+// const res: Array<obj> = books.filter((el) => el.author == "Булгаков");
+
+// console.log(res);
+
+// 19. Создайте массив объектов, представляющих книги, и отобразите книги где цена
+// каждой > 50 (price – одно из полей объекта)
+
+// interface obj {
+//   title: string;
+//   author: string;
+//   price: number;
+// }
+
+// const books = [
+//   {
+//     title: "Гарри Поттер и философский камень",
+//     author: "Роулинг",
+//     price: 65,
+//   },
+//   {
+//     title: "Властелин колец",
+//     author: "Толкин",
+//     price: 80,
+//   },
+//   {
+//     title: "1984",
+//     author: "Оруэлл",
+//     price: 45,
+//   },
+//   {
+//     title: "Три товарища",
+//     author: "Ремарк",
+//     price: 55,
+//   },
+//   {
+//     title: "Маленький принц",
+//     author: "Сент-Экзюпери",
+//     price: 30,
+//   },
+//   {
+//     title: "Атлант расправил плечи",
+//     author: "Рэнд",
+//     price: 120,
+//   },
+//   {
+//     title: "Шерлок Холмс",
+//     author: "Дойл",
+//     price: 42,
+//   },
+// ];
+
+// const res: Array<obj> = books.filter((el) => el.price > 50);
+// console.log(res);
+
+// 20.Создайте массив объектов, представляющих книги, и найдите книгу с самым
+// большим количеством страниц (count – одно из полей объекта)
+
+// interface obj {
+//   title: string;
+//   author: string;
+//   count: number;
+// }
+
+// const books: obj[] = [
+//   {
+//     title: "Война и мир",
+//     author: "Толстой",
+//     count: 1225,
+//   },
+//   {
+//     title: "Преступление и наказание",
+//     author: "Достоевский",
+//     count: 671,
+//   },
+//   {
+//     title: "Мастер и Маргарита",
+//     author: "Булгаков",
+//     count: 470,
+//   },
+//   {
+//     title: "Анна Каренина",
+//     author: "Толстой",
+//     count: 864,
+//   },
+//   {
+//     title: "Братья Карамазовы",
+//     author: "Достоевский",
+//     count: 796,
+//   },
+//   {
+//     title: "Тихий Дон",
+//     author: "Шолохов",
+//     count: 1500,
+//   },
+// ];
+
+// let sum: number = 0;
+// let res: obj;
+// for (let i = 0; i < books.length; i++) {
+//   books[i].count > sum ? (sum = books[i].count) : sum;
+// }
+
+// for (let i = 0; i < books.length; i++) {
+//   books[i].count == sum ? (res = books[i]) : null;
+// }
+
+// console.log(res);
+
+// 21. Напишите программу, которая находит и выводит длину наиболее длинного
+// слова в заданной строке.
+
+// const text: string =
+//   "Программирование это очень увлекательная и интересная деятельность";
+
+// const res: number = text
+//   .split(" ")
+//   .reduce(
+//     (sum, el) =>
+//       el.split("").length > sum ? (sum = el.split("").length) : sum,
+//     0
+//   );
+// console.log(res);
+
+// 22. Создайте массив объектов, представляющих сотрудников, с полями "имя" и
+// "зарплата". Найдите среднюю зарплату всех сотрудников.
+
+// interface obj {
+//   name: string;
+//   salary: number;
+// }
+
+// const employees: Array<obj> = [
+//   {
+//     name: "Алексей",
+//     salary: 50000,
+//   },
+//   {
+//     name: "Мария",
+//     salary: 65000,
+//   },
+//   {
+//     name: "Петр",
+//     salary: 45000,
+//   },
+//   {
+//     name: "Елена",
+//     salary: 70000,
+//   },
+//   {
+//     name: "Дмитрий",
+//     salary: 55000,
+//   },
+//   {
+//     name: "Анна",
+//     salary: 60000,
+//   },
+// ];
+// let array: Array<number> = [];
+
+// employees.forEach((el) => array.push(el.salary));
+
+// const res: number = array.reduce((sum, el) => (sum += el), 0);
+
+// console.log(res / array.length);
+
+// 23. Дан массив объектов с полями "название", "цена" и "количество". Найдите
+// суммарную стоимостью всех товаров учитывая количество каждого.
+// Итог = цена_1_товара * кол-во_1_товара + цена_2_товара * кол-во_2_товара + ...
+
+interface obj {
+  name: string;
+  price: number;
+  quantity: number;
 }
-console.log(obj);
+const products: Array<obj> = [
+  {
+    name: "Хлеб",
+    price: 30,
+    quantity: 2,
+  },
+  {
+    name: "Молоко",
+    price: 60,
+    quantity: 3,
+  },
+  {
+    name: "Яблоки",
+    price: 120,
+    quantity: 1,
+  },
+  {
+    name: "Сыр",
+    price: 250,
+    quantity: 2,
+  },
+  {
+    name: "Мясо",
+    price: 400,
+    quantity: 1,
+  },
+];
 
-let count: number = 0;
-let value: string = "";
-for (let key in obj) {
-  if (obj[key] > count) {
-    count = obj[key];
-    value = key;
-  }
-}
+let newArr: { name: string; fullPrice: number }[] = [];
+products.forEach((el) => {
+  newArr.push({
+    name: el.name,
+    fullPrice: el.price * el.quantity,
+  });
+});
 
-console.log(value);
-console.log(count);
+console.log(newArr);
